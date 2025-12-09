@@ -9,4 +9,23 @@ Started with an empty directory and executed
 - `go mod tidy`
 - `go install .`
 
+Create a provider directory
+Linux/macOS: ~/.terraform.d/plugins/
+Windows: %APPDATA%\terraform.d\plugins\
 
+GOOS=$(uname -s | tr '[:upper:]' '[:lower:]')
+GOARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/')
+mkdir -p ~/.terraform.d/plugins/local/log-provider/0.0.1/${GOOS}_${GOARCH}
+go build -o ~/.terraform.d/plugins/local/log-provider/0.0.1/${GOOS}_${GOARCH}/terraform-provider-log-provider_v0.0.1
+
+
+`chmod +x ~/.terraform.d/plugins/local/log-provider/0.0.1/darwin_arm64/*`
+
+vi .terraformrc
+`provider_installation {
+	dev_overrides {
+        "local/log-provider" = "~/.terraform.d/plugins/local/log-provider/0.0.1/darwin_arm64"
+      }
+      direct {
+      }
+}`

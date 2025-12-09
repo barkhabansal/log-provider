@@ -1,6 +1,6 @@
 module github.com/barkhabansal/log-provider
 
-go 1.24.4
+go 1.23
 
 require github.com/hashicorp/terraform-plugin-framework v1.11.0
 

@@ -9,7 +9,7 @@ import (
 
 var version = "0.0.1"
 
-const address = "registry.terraform.io/local/log-provider"
+const address = "local/log-provider"
 
 func main() {
 	fmt.Println("Terraform log provider")
