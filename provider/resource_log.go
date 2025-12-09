@@ -24,7 +24,7 @@ type logModel struct {
 }
 
 func (l logResource) Metadata(_ context.Context, _ resource.MetadataRequest, response *resource.MetadataResponse) {
-	response.TypeName = "log"
+	response.TypeName = "log-provider_log"
 }
 
 func (l logResource) Schema(_ context.Context, _ resource.SchemaRequest, response *resource.SchemaResponse) {
