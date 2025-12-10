@@ -5,7 +5,6 @@ Started with an empty directory and executed
 - `go mod init github.com/barkhabansal/log-provider`
 - `go get github.com/hashicorp/terraform-plugin-framework@v1.11.0`
 - `go get github.com/hashicorp/terraform-plugin-log@v0.9.0`
-- `go get github.com/open-policy-agent/opa@v0.64.1`
 - `go mod tidy`
 - `go install .`
 
@@ -13,7 +12,7 @@ Create a provider directory
 Linux/macOS: ~/.terraform.d/plugins/
 Windows: %APPDATA%\terraform.d\plugins\
 
-For macOS
+For macOS to publish provider locally
 ```
 GOOS=$(uname -s | tr '[:upper:]' '[:lower:]')
 GOARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/')
